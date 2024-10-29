@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Number Manager</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Phone Number Manager</h2>
+        
+        <div class="input-group">
+            <select id="existingNumbers">
+                <option value="" disabled selected>Select a number to view</option>
+            </select>
+            <button onclick="removeNumber()">Remove Selected Number</button>
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="phoneNumber" placeholder="Enter phone number(include country code)">
+            <button onclick="addNumber()">Add Number</button>
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
