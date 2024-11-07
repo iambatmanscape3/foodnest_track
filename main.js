@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', fetchNumbers);
 
-
+const baseUrl = 'https://7159-157-245-105-67.ngrok-free.app'
 
 function fetchNumbers() {
     console.log('started')
-    fetch('https://e08b-157-245-105-67.ngrok-free.app/web/numbers',{
+    fetch(`${baseUrl}/web/numbers`,{
         headers: {
         'ngrok-skip-browser-warning': 'true',
         'Content-Type': 'application/json'
@@ -28,7 +28,7 @@ function fetchNumbers() {
 function addNumber() {
     const phoneNumber = document.getElementById('phoneNumber').value;
     if (phoneNumber) {
-        fetch('https://e08b-157-245-105-67.ngrok-free.app/web/numbers/add', {
+        fetch(`${baseUrl}/web/numbers/add`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ "phone number": phoneNumber })
@@ -49,7 +49,7 @@ function removeNumber() {
     const dropdown = document.getElementById('existingNumbers');
     const selectedPhone = dropdown.value;
     if (selectedPhone) {
-        fetch('https://e08b-157-245-105-67.ngrok-free.app/web/numbers/delete', {
+        fetch(`${baseUrl}/web/numbers/delete`, {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ "phone number": selectedPhone })
